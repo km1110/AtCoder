@@ -23,8 +23,9 @@ int main()
         rep(j, 0, 1 << w1)
         {
             vector<int> hvec, wvec;
+            // 削除する行,列にフラグが立つ
             rep(k, 1, h1 + 1) if ((i & (1 << (k - 1))) == 0) hvec.push_back(k);
-            rep(k, 1, w1 + 1) if ((i & (1 << (k - 1))) == 0) wvec.push_back(k);
+            rep(k, 1, w1 + 1) if ((j & (1 << (k - 1))) == 0) wvec.push_back(k);
             if (hvec.size() != h2 || wvec.size() != w2)
                 continue;
 
